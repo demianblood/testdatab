@@ -28,7 +28,12 @@ db.getCollection('users').find(
 )
 
 6) Знайти всіх юзерів в яких назва вулиці містить пробіл
-
+db.getCollection('users').find(
+    {
+//         'address.street':/.* .*/
+        'address.street':/.*\s.*/
+    }
+)
 
 7) Видалити всіх юзерів в котрих немає поля studying
 db.getCollection('users').remove(
